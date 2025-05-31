@@ -1,7 +1,3 @@
-Here's a professional and developer-friendly `README.md` for your **Telegram integration module for Odoo**, based on the details you shared:
-
----
-
 # 📬 mail\_telegram – Telegram Integration for Odoo
 
 **`mail_telegram`** is an Odoo module that enables Telegram messaging capabilities inside your Odoo environment. With this module, users can send important documents such as quotations, invoices, payslips, and more to partners via Telegram, using customizable templates. Additionally, users can receive Telegram messages when they're mentioned in Odoo chatter or log notes.
