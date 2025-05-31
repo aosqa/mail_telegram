@@ -102,6 +102,7 @@ To use this module, you must configure your Telegram bot:
 
    * `telegram.bot_token`: Your bot's token
 3. and in contacts (res.partner) There is a field telegram_username and telegram_chatid  this has to be filled both
+4. for chat_id you can use other bots like @RawDataBot
 
 ---
 
