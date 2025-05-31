@@ -38,7 +38,8 @@
 ### ✅ 1. Define a Telegram Template
   ## COnfigure first your bot like in above (3)
 
-Just like an email template, you can define a Telegram message template using Jinja placeholders and link it to a report.
+Just like an email template, you can define a Telegram message template and link it to a report.
+-and it uses MarkdownV2 parser
 
 ```xml
 <odoo>
