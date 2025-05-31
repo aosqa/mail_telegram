@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_telegram_messages_history_tree" model="ir.ui.view">
+        <field name="name">telegram.messages.history.tree</field>
+        <field name="model">telegram.messages.history</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="create_date"/>
+                <field name="partner_id"/>
+                <field name="model_id"/>
+                <field name="reason"/>
+                <field name="state"  decoration-success="state == 'sent'" decoration-danger="state != 'sent'"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_telegram_messages_history_form" model="ir.ui.view">
+        <field name="name">telegram.messages.history.form</field>
+        <field name="model">telegram.messages.history</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Sent" invisible="state != 'sent'" bg_color="text-bg-success"/>
+                    <widget name="web_ribbon" title="Unsent" invisible="state != 'unsent'" bg_color="text-bg-danger"/>
+                    <group>
+                            <field name="name" readonly="1"/>
+
+                        <field name="partner_id"/>
+                        <field name="model_id"/>
+                        <field name="reason" readonly="1"/>
+
+                    
+                        <field name="body"/>
+                        <field name="attachment_ids" widget="many2many_binary"/>
+                        <field name="template_id"/>
+                        <field name="state" invisible="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="model_telegram_history_action_resend" model="ir.actions.server">
+        <field name="name">Resend</field>
+        <field name="model_id" ref="mail_telegram.model_telegram_messages_history"/>
+        <field name="binding_model_id" ref="mail_telegram.model_telegram_messages_history"/>
+        <field name="binding_view_types">form,list</field>
+        <field name="state">code</field>
+        <field name="code">action = records.resend_messages()</field>
+    </record>
+
+    <record id="action_telegram_messages_history" model="ir.actions.act_window">
+        <field name="name">Telegram Message History</field>
+        <field name="res_model">telegram.messages.history</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No message history yet.
+            </p>
+            <p>Messages sent via the Telegram system will appear here for reference.</p>
+        </field>
+    </record>
+
+
+    <menuitem id="menu_telegram_messages_history"
+              name="Messages History"
+              parent="menu_telegram_root"
+              action="action_telegram_messages_history"/>
+</odoo>

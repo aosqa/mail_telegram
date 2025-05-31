@@ -1,0 +1,49 @@
+<odoo>
+    <record id="view_telegram_bot_form" model="ir.ui.view">
+        <field name="name">telegram.bot.form</field>
+        <field name="model">telegram.bot</field>
+        <field name="arch" type="xml">
+            <form string="Telegram Bot">
+                <header>
+                    <button name="action_test" type="object" string="Test" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="sequence"/>
+                        <field name="telegram_user_id"/>
+                        <field name="bot_token" password="True"/>
+                        <field name="message"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_telegram_bot_tree" model="ir.ui.view">
+        <field name="name">telegram.bot.tree</field>
+        <field name="model">telegram.bot</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_telegram_bot" model="ir.actions.act_window">
+        <field name="name">Telegram Bot Messages</field>
+        <field name="res_model">telegram.bot</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+    id="telegram_technical"
+    name="Telegram"
+    parent = "base.menu_custom"
+    sequence="10"/>
+    <menuitem id="menu_telegram_bot"
+              name="Outgoing bot messages"
+              parent="telegram_technical"
+              action="action_telegram_bot"
+              sequence="10"/>
+</odoo>

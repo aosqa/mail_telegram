@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+mail_telegram.access_telegram_template,access_telegram_template,mail_telegram.model_telegram_template,base.group_user,1,1,1,1
+mail_telegram.access_telegram_compose_message,access_telegram_compose_message,mail_telegram.model_telegram_compose_message,base.group_user,1,1,1,1
+mail_telegram.access_telegram_bot,access_telegram_bot,mail_telegram.model_telegram_bot,base.group_user,1,1,1,1
+mail_telegram.access_telegram_messages_history,access_telegram_messages_history,mail_telegram.model_telegram_messages_history,base.group_user,1,1,1,1

@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+    <record id="view_telegram_compose_message_form" model="ir.ui.view">
+        <field name="name">telegram.compose.message.form</field>
+        <field name="model">telegram.compose.message</field>
+        <field name="arch" type="xml">
+            <form string="Compose Telegram Message">
+                <group>
+               
+                    <field name="model" invisible="1"/>
+                    <field name="res_id" invisible="1"/>
+                    <field name="record_name" invisible="1"/>
+                    <field name="partner_ids" widget="many2many_tags"/>
+                    <field name="body" required="1"/>
+                    <field name="attachment_ids" widget="many2many_binary"/>
+                    <field name="template_id" invisible="res_id==False"/>
+
+            </group>
+                <footer>
+                    <button string="Send" type="object" name="send_message" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_telegram_compose_message" model="ir.actions.act_window">
+        <field name="name">Compose Telegram</field>
+        <field name="res_model">telegram.compose.message</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+   
+    <menuitem id="menu_telegram_root" name="Telegram" sequence="10"/>
+
+    <menuitem id="menu_telegram_messages"
+              name="Compose Message"
+              parent="menu_telegram_root"
+              action="action_telegram_compose_message"
+              sequence="20"/>
+
+    
+            </data>
+            
+</odoo>
