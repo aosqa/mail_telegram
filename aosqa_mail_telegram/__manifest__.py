@@ -17,7 +17,7 @@ Key Features:
 - Telegram composer wizard for previewing and sending
 - Integration with partner Telegram usernames
     """,
-    'version': "17.0.1.3.3",
+    'version': "17.0.1.0.0",
     'category': 'Communication',
     'author': 'Abdulselam Molla',
     'website': 'https://github.com/aosqa/mail_telegram',  

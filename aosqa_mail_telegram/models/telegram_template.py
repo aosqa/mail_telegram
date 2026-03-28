@@ -41,8 +41,8 @@ class TelegramTemplate(models.Model):
         return res
     
     def telegram_message(self):
-        bot_token = '7769869014:AAETxD15XOoQzLw0kwsziQOZpaeRzqz3q2g'           # Replace with your bot token
-        chat_id = '5569261806'
+        bot_token = ''           # Replace with your bot token
+        chat_id = ''
         url = f'https://api.telegram.org/bot{bot_token}/sendDocument'
         mime_type = 'application/octet-stream'
         for record in self:
@@ -69,8 +69,8 @@ class TelegramTemplate(models.Model):
     
 
     def send_file_to_telegram(self,data=False):
-        bot_token = '7769869014:AAETxD15XOoQzLw0kwsziQOZpaeRzqz3q2g'           # Replace with your bot token
-        chat_id = '5569261806' 
+        bot_token = ''           # Replace with your bot token
+        chat_id = '' 
         for record in self:
             if data:
                  mime_type = 'application/octet-stream'
