@@ -19,7 +19,7 @@ Key Features:
     """,
     'version': "17.0.1.0.0",
     'category': 'Communication',
-    'author': 'Abdulselam Molla',
+    'author': 'Abduselam M.',
     'website': 'https://github.com/aosqa/mail_telegram',  
     'depends': ['base', 'mail'],
     'external_dependencies': {
@@ -37,6 +37,8 @@ Key Features:
         'web.assets_backend': [
         ],
     },
+        'license': 'LGPL-3',
+
     'installable': True,
     'application': True,
     'auto_install': False,
