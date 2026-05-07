@@ -42,4 +42,6 @@ Key Features:
     'installable': True,
     'application': True,
     'auto_install': False,
+    'images': ['static/description/banner.png'],
+
 }
